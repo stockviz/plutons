@@ -18,3 +18,8 @@ ggplot, quantmod are fair game.
 
 ### [Mutual funds vs. Index drawdowns](mutual-fund-drawdown.R.ipynb)
 Do active managers reduce drawdowns during downturns? Top 5 mid-cap funds by AUM at the turn 2017 show that active managers can and do navigate through drawdowns.
+
+### [Mutual fund sector allocation](mutual-fund-sector-allocations.R.ipynb)
+A tile plot to visualize sector allocations through time. A caveat: classifications can and do change over time. For example, HDFCBANK was first "BANK" and since March 2018, it is "FINANCIAL SERVICES".\
+[Franklin Prima](https://github.com/stockviz/plutons/blob/e47cecbdabcf912d812171a40b9fa1a45445e8c3/mutual-fund-sector-allocations.R.ipynb)\
+[Mirae Emerging Blue-chip](https://github.com/stockviz/plutons/blob/f9e12bd5fab761adbcc7116a07c3c7ba5e6ceb4e/mutual-fund-sector-allocations.R.ipynb)

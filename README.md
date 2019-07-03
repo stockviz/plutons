@@ -15,3 +15,6 @@ Density plots and summary statistics.
 
 ### [Plot time-series](time-series-charts.R.ipynb)
 ggplot, quantmod are fair game.
+
+### [Mutual funds vs. Index drawdowns](mutual-fund-drawdown.R.ipynb)
+Do active managers reduce drawdowns during downturns? Top 5 mid-cap funds by AUM at the turn 2017 show that active managers can and do navigate through drawdowns.

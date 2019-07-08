@@ -128,14 +128,18 @@ sectorAlloc1 <- mfi$Portfolio() %>%
            & !is.null(WEIGHTAGE)
            & WEIGHTAGE > 0
            & PORTFOLIO_DATE == date1
-           & (INSTRUMENT_TYPE == 'STOCK' | INSTRUMENT_TYPE == 'E' | INSTRUMENT_TYPE == '' | is.null(INSTRUMENT_TYPE))) %>%
+           & (INSTRUMENT_TYPE == 'STOCK' 
+              | INSTRUMENT_TYPE == 'E' 
+              | INSTRUMENT_TYPE == '' 
+              | is.null(INSTRUMENT_TYPE))) %>%
     group_by(INDUSTRY_BSE) %>%
     summarize(ALLOC = sum(WEIGHTAGE)) %>%
     arrange(desc(ALLOC)) %>%
     collect()
 
 sectorAlloc1Df <- sectorAlloc1 %>%
-    mutate(INDUSTRY_BSE = replace(INDUSTRY_BSE, INDUSTRY_BSE == '-' | is.na(INDUSTRY_BSE), 'UNK')) %>%
+    mutate(INDUSTRY_BSE = replace(INDUSTRY_BSE, INDUSTRY_BSE == '-' 
+                                  | is.na(INDUSTRY_BSE), 'UNK')) %>%
     as.data.frame()
 
 sectorAlloc2 <- mfi$Portfolio() %>%
@@ -144,14 +148,18 @@ sectorAlloc2 <- mfi$Portfolio() %>%
            & !is.null(WEIGHTAGE)
            & WEIGHTAGE > 0
            & PORTFOLIO_DATE == date2
-           & (INSTRUMENT_TYPE == 'STOCK' | INSTRUMENT_TYPE == 'E' | INSTRUMENT_TYPE == '' | is.null(INSTRUMENT_TYPE))) %>%
+           & (INSTRUMENT_TYPE == 'STOCK' 
+              | INSTRUMENT_TYPE == 'E' 
+              | INSTRUMENT_TYPE == '' 
+              | is.null(INSTRUMENT_TYPE))) %>%
     group_by(INDUSTRY_BSE) %>%
     summarize(ALLOC = sum(WEIGHTAGE)) %>%
     arrange(desc(ALLOC)) %>%
     collect()
 
 sectorAlloc2Df <- sectorAlloc2 %>%
-    mutate(INDUSTRY_BSE = replace(INDUSTRY_BSE, INDUSTRY_BSE == '-' | is.na(INDUSTRY_BSE), 'UNK')) %>%
+    mutate(INDUSTRY_BSE = replace(INDUSTRY_BSE, INDUSTRY_BSE == '-' 
+                                  | is.na(INDUSTRY_BSE), 'UNK')) %>%
     as.data.frame()
 
 ```
@@ -165,7 +173,9 @@ sectorAlloc2Df <- sectorAlloc2 %>%
 ```R
 pie(sectorAlloc1Df$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc1Df$INDUSTRY, sectorAlloc1Df$ALLOC), 
     col=economist_pal()(9), 
-    main=sprintf("%s Sector Allocations (%s)", schemeName, date1), family='Segoe UI', init.angle=45)
+    main=sprintf("%s Sector Allocations (%s)", schemeName, date1), 
+    family='Segoe UI', 
+    init.angle=45)
 mtext("@StockViz", side=1)
 ```
 
@@ -177,7 +187,9 @@ mtext("@StockViz", side=1)
 ```R
 pie(sectorAlloc2Df$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc2Df$INDUSTRY, sectorAlloc2Df$ALLOC), 
     col=economist_pal()(9), 
-    main=sprintf("%s Sector Allocations (%s)", schemeName, date2), family='Segoe UI', init.angle=45)
+    main=sprintf("%s Sector Allocations (%s)", schemeName, date2), 
+    family='Segoe UI', 
+    init.angle=45)
 mtext("@StockViz", side=1)
 ```
 
@@ -197,7 +209,9 @@ sectorAlloc2Df2 <- sectorAlloc2Df[sectorAlloc2Df$ALLOC > 2, ]
 ```R
 pie(sectorAlloc1Df2$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc1Df2$INDUSTRY, sectorAlloc1Df2$ALLOC), 
     col=economist_pal()(9), 
-    main=sprintf("%s Sector Allocations (%s) > 2%%", schemeName, date1), family='Segoe UI', init.angle=45)
+    main=sprintf("%s Sector Allocations (%s) > 2%%", schemeName, date1), 
+    family='Segoe UI', 
+    init.angle=45)
 mtext("@StockViz", side=1)
 ```
 
@@ -209,7 +223,9 @@ mtext("@StockViz", side=1)
 ```R
 pie(sectorAlloc2Df2$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc2Df2$INDUSTRY, sectorAlloc2Df2$ALLOC), 
     col=economist_pal()(9), 
-    main=sprintf("%s Sector Allocations (%s) > 2%%", schemeName, date2), family='Segoe UI', init.angle=45)
+    main=sprintf("%s Sector Allocations (%s) > 2%%", schemeName, date2), 
+    family='Segoe UI', 
+    init.angle=45)
 mtext("@StockViz", side=1)
 ```
 

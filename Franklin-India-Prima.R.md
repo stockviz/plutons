@@ -171,7 +171,8 @@ sectorAlloc2Df <- sectorAlloc2 %>%
 
 
 ```R
-pie(sectorAlloc1Df$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc1Df$INDUSTRY, sectorAlloc1Df$ALLOC), 
+pie(sectorAlloc1Df$ALLOC, 
+    labels=sprintf("%s (%.2f%%)", sectorAlloc1Df$INDUSTRY, sectorAlloc1Df$ALLOC), 
     col=economist_pal()(9), 
     main=sprintf("%s Sector Allocations (%s)", schemeName, date1), 
     family='Segoe UI', 
@@ -185,7 +186,8 @@ mtext("@StockViz", side=1)
 
 
 ```R
-pie(sectorAlloc2Df$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc2Df$INDUSTRY, sectorAlloc2Df$ALLOC), 
+pie(sectorAlloc2Df$ALLOC, 
+    labels=sprintf("%s (%.2f%%)", sectorAlloc2Df$INDUSTRY, sectorAlloc2Df$ALLOC), 
     col=economist_pal()(9), 
     main=sprintf("%s Sector Allocations (%s)", schemeName, date2), 
     family='Segoe UI', 
@@ -207,7 +209,8 @@ sectorAlloc2Df2 <- sectorAlloc2Df[sectorAlloc2Df$ALLOC > 2, ]
 
 
 ```R
-pie(sectorAlloc1Df2$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc1Df2$INDUSTRY, sectorAlloc1Df2$ALLOC), 
+pie(sectorAlloc1Df2$ALLOC, 
+    labels=sprintf("%s (%.2f%%)", sectorAlloc1Df2$INDUSTRY, sectorAlloc1Df2$ALLOC), 
     col=economist_pal()(9), 
     main=sprintf("%s Sector Allocations (%s) > 2%%", schemeName, date1), 
     family='Segoe UI', 
@@ -221,7 +224,8 @@ mtext("@StockViz", side=1)
 
 
 ```R
-pie(sectorAlloc2Df2$ALLOC, labels=sprintf("%s (%.2f%%)", sectorAlloc2Df2$INDUSTRY, sectorAlloc2Df2$ALLOC), 
+pie(sectorAlloc2Df2$ALLOC, 
+    labels=sprintf("%s (%.2f%%)", sectorAlloc2Df2$INDUSTRY, sectorAlloc2Df2$ALLOC), 
     col=economist_pal()(9), 
     main=sprintf("%s Sector Allocations (%s) > 2%%", schemeName, date2), 
     family='Segoe UI', 

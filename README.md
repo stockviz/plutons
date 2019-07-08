@@ -23,3 +23,6 @@ Do active managers reduce drawdowns during downturns? Top 5 mid-cap funds by AUM
 A tile plot to visualize sector allocations through time. A caveat: classifications can and do change over time. For example, HDFCBANK was first "BANK" and since March 2018, it is "FINANCIAL SERVICES".\
 [Franklin Prima](https://github.com/stockviz/plutons/blob/e47cecbdabcf912d812171a40b9fa1a45445e8c3/mutual-fund-sector-allocations.R.ipynb)\
 [Mirae Emerging Blue-chip](https://github.com/stockviz/plutons/blob/f9e12bd5fab761adbcc7116a07c3c7ba5e6ceb4e/mutual-fund-sector-allocations.R.ipynb)
+
+### [Mutual fund sector allocation as per BSE](mutual-fund-sector-allocations-BSE.R.ipynb)
+The Bombay Stock Exchange has its own logic to classifying stocks by sector. It gives a more consistent and granular view of allocations.

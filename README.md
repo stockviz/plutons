@@ -33,5 +33,5 @@ Pie charts of allocations at different periods. Got a bit tricky because the not
 ### [Visualize mutual fund portfolio overlaps with other indices and mutual funds](Mutual-fund-portfolio-overlaps.R.ipynb)
 Use Upset charts for visualizing fund portfolio overlaps.
 
-### Fund with NASDAQOMX index data-sets
+### Fun with NASDAQOMX index data-sets
 Explore [commodity indices](NASDAQOMX-commodities.R.ipynb) or [Indian equity indices](NASDAQOMX-india.R.ipynb) in USD

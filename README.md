@@ -26,3 +26,12 @@ A tile plot to visualize sector allocations through time. A caveat: classificati
 
 ### [Mutual fund sector allocation as per BSE](mutual-fund-sector-allocations-BSE.R.ipynb)
 The Bombay Stock Exchange has its own logic to classifying stocks by sector. It gives a more consistent and granular view of allocations.
+
+### [Sector allocations of the Franklin Prima Fund](Franklin-India-Prima.R.ipynb)
+Pie charts of allocations at different periods. Got a bit tricky because the notebook bloted beyond the 1MB limit of github. So now, on exceeding the limit, markdown files with images extracted to separate files is uploaded instead. The big notebook files stays on pluto.
+
+### [Visualize mutual fund portfolio overlaps with other indices and mutual funds](Mutual-fund-portfolio-overlaps.R.ipynb)
+Use Upset charts for visualizing fund portfolio overlaps.
+
+### Fund with NASDAQOMX index data-sets
+Explore [commodity indices](NASDAQOMX-commodities.R.ipynb) or [Indian equity indices](NASDAQOMX-india.R.ipynb) in USD

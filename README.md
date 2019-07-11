@@ -35,3 +35,7 @@ Use Upset charts for visualizing fund portfolio overlaps.
 
 ### Fun with NASDAQOMX index data-sets
 Explore [commodity indices](NASDAQOMX-commodities.R.ipynb) or [Indian equity indices](NASDAQOMX-india.R.ipynb) in USD
+
+### [Backtesting a 60/40 Indian equity/bond portfolio](60-40-equity-bond-india.R.ipynb)
+Uses a monthly return series of NIFTY 50 and MIDCAP 100 total-return indices as a stand-in for equities and short-term (< 5 year maturity) government bond total-return index as a stand-in for bonds.
+

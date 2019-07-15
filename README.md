@@ -39,3 +39,9 @@ Explore [commodity indices](NASDAQOMX-commodities.R.ipynb) or [Indian equity ind
 ### [Backtesting a 60/40 Indian equity/bond portfolio](60-40-equity-bond-india.R.ipynb)
 Uses a monthly return series of NIFTY 50 and MIDCAP 100 total-return indices as a stand-in for equities and short-term (< 5 year maturity) government bond total-return index as a stand-in for bonds.
 
+### [Backtesting an S&P 500 "VIX Adjusted Momentum" strategy](vix-adjusted-momentum-US.R.ipynb)
+Works mostly because it side-steps some steep drawdowns. However, when the same was tested on [NIFTY/INDIA-VIX](vix-adjusted-momentum-INDIA.R.md), it under-performed buy-and-hold. And [adding an SMA(50) layer](vix-adjusted-momentum-and-SMA-INDIA.R.ipynb) only makes it worse.
+
+### [Getting to "real" returns](inflation-adjusted-returns.R.ipynb)
+Inflation tends to vary widely through time. To see what "real", i.e., after inflation, returns are, the rate of inflation needs to be subtracted from gross returns.
+

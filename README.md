@@ -45,3 +45,7 @@ Works mostly because it side-steps some steep drawdowns. However, when the same 
 ### [Getting to "real" returns](inflation-adjusted-returns.R.ipynb)
 Inflation tends to vary widely through time. To see what "real", i.e., after inflation, returns are, the rate of inflation needs to be subtracted from gross returns.
 
+### Yield curves!
+[Zero-coupon yields vs. Sovereign bond index yields](zero-coupon.vs.bond-yeilds.R.ipynb)\
+[Plotting the 10-year yields of India, US and Euro-AAAs](10-year-yields.R.ipynb)
+

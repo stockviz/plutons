@@ -1,11 +1,15 @@
 # plutons
 notebooks created on pluto
 
-### [Dollar Indices on the FRED](fred-dollar-indices.R.ipynb)
-Explore trade-weighted dollar indices on the FRED and compare other USD currency pairs, like USDINR, with trade-weighted indices.
+### Currencies
+[Dollar Indices on the FRED](fred-dollar-indices.R.ipynb): Explore trade-weighted dollar indices on the FRED and compare other USD currency pairs, like USDINR, with trade-weighted indices.\
+[Currency futures on the NSE](plotting-currency-futures.R.ipynb): Creating a continuous series out of futures contracts.\
+[An overview of how currency sources on pluto](currency-sources.R.ipynb)
 
-### [Gold vs. NIFTY 50](gold-nifty50.ipynb)
-Explore historical returns of gold vs. the NIFTY 50 Total Return (TR) index in dollars.
+### Gold
+[Gold vs. NIFTY 50](gold-nifty50.ipynb): Explore historical returns of gold vs. the NIFTY 50 Total Return (TR) index in dollars.\
+[GOLDBEES vs. NIFTYBEES](GOLDBEES-NIFTYBEES.R.ipynb): Comparision of the two India listed ETFs.\
+[Gold futures listed on MCX](GOLD-MCX.R.ipynb): Exploring the plethora of gold futures contracts listed on the MCX.
 
 ### [Rolling Returns of NIFTY 50](nifty-rolling-returns.R.ipynb)
 Plot rolling returns over different time-horizons.
@@ -48,4 +52,11 @@ Inflation tends to vary widely through time. To see what "real", i.e., after inf
 ### Yield curves!
 [Zero-coupon yields vs. Sovereign bond index yields](zero-coupon.vs.bond-yeilds.R.ipynb)\
 [Plotting the 10-year yields of India, US and Euro-AAAs](10-year-yields.R.ipynb)
+
+### Equity time-series
+[Plotting a stock's price chart with corporate action overlay](charting-stocks-with-corporate-actions.R.ipynb)\
+[Comparing stocks with indices](compare-stock-vs-index.R.ipynb)
+
+### [NSE's "Alpha" Indices charted](NIFTY-ALPHA-indices.R.ipynb)
+
 

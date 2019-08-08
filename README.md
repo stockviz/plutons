@@ -65,5 +65,5 @@ Inflation tends to vary widely through time. To see what "real", i.e., after inf
 ## Fama-French
 
 ### Momentum Factor
-[Introduction](Fama-French/Momentum.R.ipynb): Charting the performance of the long-short academic momentum factor.\
+[Introduction](Fama-French/Momentum.R.ipynb): Charting the performance of the long-short academic momentum factor.
 

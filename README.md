@@ -11,8 +11,9 @@ notebooks created on pluto
 [GOLDBEES vs. NIFTYBEES](GOLDBEES-NIFTYBEES.R.ipynb): Comparision of the two India listed ETFs.\
 [Gold futures listed on MCX](GOLD-MCX.R.ipynb): Exploring the plethora of gold futures contracts listed on the MCX.
 
-### [Rolling Returns of NIFTY 50](nifty-rolling-returns.R.ipynb)
-Plot rolling returns over different time-horizons.
+### NIFTY 50
+[Rolling Returns](nifty-rolling-returns.R.ipynb): Plot rolling returns over different time-horizons. \
+[SMA On/Off](NIFTY50-SMA.R.ipynb): Toggling market exposure based on a Simple Moving Average.
 
 ### [Statistical distribution of the returns of an index](return-distribution.R.ipynb)
 Density plots and summary statistics.
@@ -57,6 +58,12 @@ Inflation tends to vary widely through time. To see what "real", i.e., after inf
 [Plotting a stock's price chart with corporate action overlay](charting-stocks-with-corporate-actions.R.ipynb)\
 [Comparing stocks with indices](compare-stock-vs-index.R.ipynb)
 
+### [Tracking FII flows](FII-capital-market-flows.R.ipynb)
+
 ### [NSE's "Alpha" Indices charted](NIFTY-ALPHA-indices.R.ipynb)
 
+## Fama-French
+
+### Momentum Factor
+[Introduction](Fama-French/Momentum.R.ipynb): Charting the performance of the long-short academic momentum factor.\
 

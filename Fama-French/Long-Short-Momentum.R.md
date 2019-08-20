@@ -194,6 +194,9 @@ Common.PlotCumReturns(longOnly, "Long-only", "Fama-French")
 
 
 ```R
+print(head(longOnlyYearlies))
+print(tail(longOnlyYearlies))
+
 yDf <- data.frame(longOnlyYearlies)
 yDf$T <- year(index(longOnlyYearlies))
 
@@ -210,8 +213,24 @@ ggplot(toPlot, aes(x=T, y=value, fill=variable)) +
              col="white", cex=6, fontface = "bold", alpha = 0.8)  
 ```
 
+                         L         ~S         MKT
+    2000-12-29  -300.90090 -523.25581    74.89115
+    2001-12-31   -58.74439  -17.58242   -14.27386
+    2002-12-31  -101.08696 -254.66667  -112.10068
+    2003-12-31 -3800.00000  -79.74138   -88.80000
+    2004-12-31   -59.45946 -131.91489 -1050.00000
+    2005-12-30    86.66667  -66.66667   264.66165
+                        L          ~S         MKT
+    2014-12-31 -371.79487  -109.09091 -311.363636
+    2015-12-31   23.58491 -1516.66667   -1.075269
+    2016-12-30   13.74046  -130.58824  -43.586957
+    2017-12-29  -36.91275    61.53846    9.055877
+    2018-12-31 -258.51064  -264.28571 -260.777385
+    2019-06-28  -76.51007    79.71014  -24.285714
 
-![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_6_0.png)
+
+
+![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_6_1.png)
 
 
 

@@ -1,6 +1,6 @@
 # The Long and Short of Fama-French Momentum
 
-Most investors are long-only and do not have access to investment vehicles that go short. However, academic factor investing focuses mostly on long-short portfolios to show their persistence. The contribution of the short-side of the portfolio to aggregate performance cannot be trivialized. Here, we construct three portfolios out of the Fama-French Momentum data-set -- long-only, short-only and long-short -- to get an idea of how they intersect.
+Here, we construct three portfolios out of the Fama-French Momentum data-set -- long-only, short-only and long-short -- to get an idea of how they intersect.
 
 The [Fama-French](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_10_port_form_pr_12_2_daily.html) data-set has returns for portfolios constructed out of each decile of prior returns. With **HI_PRIOR** and **LO_PRIOR** returns, long-only, long-short and short-only portfolio daily returns can be calculated. These returns can then be compared with market returns contained in the [5 Factors (2x3)](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/f-f_5_factors_2x3.html) data-set by adding back the **Rf** to **Rm-Rf**.
 
@@ -72,16 +72,17 @@ famaFrench <- FamaFrench()
 ```R
 momStartDt <- (famaFrench$MomentumDaily() %>% summarize(MAX = min(TIME_STAMP)) %>% collect())$MAX[[1]]
 mktStartDt <- (famaFrench$FiveFactor3x2Daily() %>% summarize(MAX = min(TIME_STAMP)) %>% collect())$MAX[[1]]
-startDt <- max(momStartDt, mktStartDt)
+#startDt <- max(momStartDt, mktStartDt)
+startDt <- as.Date("2000-01-01")
 
 hiMom <- famaFrench$MomentumDaily() %>%
-    filter(KEY_ID == 'HI_PRIOR' & RET_TYPE == 'AEWRD' & TIME_STAMP >= startDt) %>%
+    filter(KEY_ID == 'HI_PRIOR' & RET_TYPE == 'AVWRD' & TIME_STAMP >= startDt) %>%
     select(TIME_STAMP, RET) %>%
     collect() %>%
     as.data.frame()
 
 loMom <- famaFrench$MomentumDaily() %>%
-    filter(KEY_ID == 'LO_PRIOR' & RET_TYPE == 'AEWRD' & TIME_STAMP >= startDt) %>%
+    filter(KEY_ID == 'LO_PRIOR' & RET_TYPE == 'AVWRD' & TIME_STAMP >= startDt) %>%
     select(TIME_STAMP, RET) %>%
     collect() %>%
     as.data.frame()
@@ -113,25 +114,25 @@ print(tail(retXts))
 ```
 
                     HI      LO      MKT
-    1963-07-01 -0.0098 -0.0056 -0.00658
-    1963-07-02  0.0141  0.0020  0.00802
-    1963-07-03  0.0083  0.0049  0.00642
-    1963-07-05  0.0044  0.0042  0.00412
-    1963-07-08 -0.0092 -0.0039 -0.00618
-    1963-07-09  0.0117  0.0013  0.00462
+    2000-01-03  0.0111  0.0043 -0.00689
+    2000-01-04 -0.0598 -0.0134 -0.04039
+    2000-01-05 -0.0216  0.0060 -0.00069
+    2000-01-06 -0.0305  0.0009 -0.00709
+    2000-01-07  0.0530  0.0192  0.03231
+    2000-01-10  0.0487  0.0079  0.01781
                     HI      LO      MKT
-    2019-06-21 -0.0040 -0.0064 -0.00201
-    2019-06-24 -0.0093 -0.0169 -0.00331
-    2019-06-25 -0.0115 -0.0054 -0.00971
-    2019-06-26 -0.0066  0.0055 -0.00051
-    2019-06-27  0.0185  0.0143  0.00609
-    2019-06-28  0.0160  0.0095  0.00689
+    2019-06-21 -0.0074 -0.0006 -0.00201
+    2019-06-24  0.0005 -0.0251 -0.00331
+    2019-06-25 -0.0156 -0.0006 -0.00971
+    2019-06-26 -0.0051  0.0169 -0.00051
+    2019-06-27  0.0047  0.0107  0.00609
+    2019-06-28  0.0035  0.0124  0.00689
 
 
 
 ```R
-longOnly <- merge(retXts$HI, retXts$MKT)
-names(longOnly) <- c('L', 'MKT')
+longOnly <- merge(retXts$HI, retXts$LO, retXts$MKT)
+names(longOnly) <- c('L', '~S', 'MKT')
 
 shortOnly <- merge(-retXts$LO, retXts$MKT)
 names(shortOnly) <- c('S', 'MKT')

@@ -16,6 +16,7 @@ library(quantmod)
 library(lubridate)
 library(reshape2)
 library(PerformanceAnalytics)
+library(ggrepel)
 
 options("scipen"=999)
 options(stringsAsFactors = FALSE)
@@ -210,9 +211,7 @@ ggplot(toPlot, aes(x=T, y=value, fill=variable)) +
 ```
 
 
-    Error in geom_text_repel(aes(label = round(value, 2)), position = position_dodge(0.9)): could not find function "geom_text_repel"
-    Traceback:
-
+![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_6_0.png)
 
 
 

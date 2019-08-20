@@ -225,7 +225,7 @@ Common.PlotCumReturns(shortOnly, "Short-only", "Fama-French")
 
 
 ```R
-Common.PlotCumReturns(longShort, "Long-Short", "Fama-French")
+plotAnnualReturns(shortOnlyYearlies, "Short-only Fama-French")
 ```
 
 
@@ -234,11 +234,29 @@ Common.PlotCumReturns(longShort, "Long-Short", "Fama-French")
 
 
 ```R
-Common.PlotCumReturns(lsl, "Long, Short and Long-Short", "Fama-French")
+Common.PlotCumReturns(longShort, "Long-Short", "Fama-French")
 ```
 
 
 ![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_10_0.png)
+
+
+
+```R
+plotAnnualReturns(longShortYearlies, "Short-only Fama-French")
+```
+
+
+![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_11_0.png)
+
+
+
+```R
+Common.PlotCumReturns(lsl, "Long, Short and Long-Short", "Fama-French")
+```
+
+
+![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_12_0.png)
 
 
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)

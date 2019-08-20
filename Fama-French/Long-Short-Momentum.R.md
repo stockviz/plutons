@@ -159,11 +159,41 @@ names(longOnlyYearlies) <- c('L', '~S', 'MKT')
 shortOnly <- merge(-retXts$LO, retXts$MKT)
 names(shortOnly) <- c('S', 'MKT')
 
+pxXts <- merge(cumprod(1+shortOnly[,1]), cumprod(1+shortOnly[,2]))
+names(pxXts) <- c('S', 'MKT')
+shortOnlyYearlies <- 100*merge(yearlyReturn(pxXts[,1]), yearlyReturn(pxXts[,2]))
+names(shortOnlyYearlies) <- c('S', 'MKT')
+
 longShort <- merge(retXts$HI-retXts$LO, retXts$MKT)
 names(longShort) <- c('LS', 'MKT')
 
+pxXts <- merge(cumprod(1+longShort[,1]), cumprod(1+longShort[,2]))
+names(pxXts) <- c('LS', 'MKT')
+longShortYearlies <- 100*merge(yearlyReturn(pxXts[,1]), yearlyReturn(pxXts[,2]))
+names(longShortYearlies) <- c('LS', 'MKT')
+
 lsl <- merge(retXts$HI, -retXts$LO, retXts$HI-retXts$LO, retXts$MKT)
 names(lsl) <- c('L', 'S', 'LS', 'MKT')
+```
+
+
+```R
+plotAnnualReturns <- function(yearlies, mainTitle){
+    yDf <- data.frame(yearlies)
+    yDf$T <- year(index(yearlies))
+
+    toPlot <- melt(yDf, id='T')
+
+    ggplot(toPlot, aes(x=T, y=value, fill=variable)) +
+        theme_economist() +
+        geom_bar(stat="identity", position=position_dodge()) +
+        scale_x_continuous(labels=yDf$T, breaks=yDf$T) +
+        geom_text_repel(aes(label= round(value, 2)), position = position_dodge(0.9)) +
+        labs(x='', y='(%)', fill='', title=mainTitle, subtitle="Annual Returns") +
+        annotate("text", x=max(yDf$T), y=min(toPlot$value), 
+                 label = "@StockViz", hjust=1.1, vjust=-1.1, 
+                 col="white", cex=6, fontface = "bold", alpha = 0.8)  
+}
 ```
 
 
@@ -172,53 +202,12 @@ Common.PlotCumReturns(longOnly, "Long-only", "Fama-French")
 ```
 
 
-![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_5_0.png)
+![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_6_0.png)
 
 
 
 ```R
-print(head(longOnlyYearlies))
-print(tail(longOnlyYearlies))
-
-yDf <- data.frame(longOnlyYearlies)
-yDf$T <- year(index(longOnlyYearlies))
-
-toPlot <- melt(yDf, id='T')
-
-ggplot(toPlot, aes(x=T, y=value, fill=variable)) +
-    theme_economist() +
-    geom_bar(stat="identity", position=position_dodge()) +
-    scale_x_continuous(labels=yDf$T, breaks=yDf$T) +
-    geom_text_repel(aes(label= round(value, 2)), position = position_dodge(0.9)) +
-    labs(x='', y='(%)', fill='', title="Fama-French Long-only", subtitle="Annual Returns") +
-    annotate("text", x=max(yDf$T), y=min(toPlot$value), 
-             label = "@StockViz", hjust=1.1, vjust=-1.1, 
-             col="white", cex=6, fontface = "bold", alpha = 0.8)  
-```
-
-                        L        ~S        MKT
-    2000-12-29 -21.070544 -51.52308 -11.296518
-    2001-12-31   1.314077 -23.96959 -11.178080
-    2002-12-31 -16.188658 -41.81438 -21.166390
-    2003-12-31  40.207811  77.68519  31.743651
-    2004-12-31  16.525766  19.08835  11.918021
-    2005-12-30  20.154992  -1.66627   6.019415
-                        L          ~S        MKT
-    2014-12-31 14.5928111  -0.7712461 11.7155621
-    2015-12-31  4.9333551 -32.9331956  0.1099141
-    2016-12-30 12.2133911  35.6282739 13.4585283
-    2017-12-29 18.2196461  14.3915279 22.5130083
-    2018-12-31 -0.9790113 -23.1886846 -5.0899281
-    2019-06-28 19.9215685  23.6896579 18.5720258
-
-
-
-![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_6_1.png)
-
-
-
-```R
-Common.PlotCumReturns(shortOnly, "Short-only", "Fama-French")
+plotAnnualReturns(longOnlyYearlies, "Long-only Fama-French")
 ```
 
 
@@ -227,7 +216,7 @@ Common.PlotCumReturns(shortOnly, "Short-only", "Fama-French")
 
 
 ```R
-Common.PlotCumReturns(longShort, "Long-Short", "Fama-French")
+Common.PlotCumReturns(shortOnly, "Short-only", "Fama-French")
 ```
 
 
@@ -236,11 +225,20 @@ Common.PlotCumReturns(longShort, "Long-Short", "Fama-French")
 
 
 ```R
-Common.PlotCumReturns(lsl, "Long, Short and Long-Short", "Fama-French")
+Common.PlotCumReturns(longShort, "Long-Short", "Fama-French")
 ```
 
 
 ![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_9_0.png)
+
+
+
+```R
+Common.PlotCumReturns(lsl, "Long, Short and Long-Short", "Fama-French")
+```
+
+
+![png](Long-Short-Momentum.R_files/Long-Short-Momentum.R_10_0.png)
 
 
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)

@@ -14,6 +14,7 @@ library(odbc)
 library(plutoR)
 library(quantmod)
 library(lubridate)
+library(reshape2)
 library(PerformanceAnalytics)
 
 options("scipen"=999)
@@ -65,6 +66,13 @@ famaFrench <- FamaFrench()
     The following object is masked from ‘package:base’:
     
         date
+    
+    
+    Attaching package: ‘reshape2’
+    
+    The following object is masked from ‘package:tidyr’:
+    
+        smiths
     
     
     Attaching package: ‘PerformanceAnalytics’
@@ -202,7 +210,7 @@ ggplot(toPlot, aes(x=T, y=value, fill=variable)) +
 ```
 
 
-    Error in melt(yDf, id = "T"): could not find function "melt"
+    Error in geom_text_repel(aes(label = round(value, 2)), position = position_dodge(0.9)): could not find function "geom_text_repel"
     Traceback:
 
 

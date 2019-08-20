@@ -90,7 +90,7 @@ famaFrench <- FamaFrench()
 momStartDt <- (famaFrench$MomentumDaily() %>% summarize(MAX = min(TIME_STAMP)) %>% collect())$MAX[[1]]
 mktStartDt <- (famaFrench$FiveFactor3x2Daily() %>% summarize(MAX = min(TIME_STAMP)) %>% collect())$MAX[[1]]
 #startDt <- max(momStartDt, mktStartDt)
-startDt <- as.Date("2000-01-01")
+startDt <- as.Date("1995-01-01")
 
 hiMom <- famaFrench$MomentumDaily() %>%
     filter(KEY_ID == 'HI_PRIOR' & RET_TYPE == 'AVWRD' & TIME_STAMP >= startDt) %>%
@@ -130,13 +130,13 @@ print(head(retXts))
 print(tail(retXts))
 ```
 
-                    HI      LO      MKT
-    2000-01-03  0.0111  0.0043 -0.00689
-    2000-01-04 -0.0598 -0.0134 -0.04039
-    2000-01-05 -0.0216  0.0060 -0.00069
-    2000-01-06 -0.0305  0.0009 -0.00709
-    2000-01-07  0.0530  0.0192  0.03231
-    2000-01-10  0.0487  0.0079  0.01781
+                    HI      LO     MKT
+    1995-01-03 -0.0150  0.0033 -0.0024
+    1995-01-04  0.0010  0.0101  0.0035
+    1995-01-05 -0.0035  0.0054 -0.0003
+    1995-01-06  0.0071  0.0018  0.0020
+    1995-01-09  0.0022  0.0031  0.0010
+    1995-01-10  0.0098 -0.0005  0.0022
                     HI      LO      MKT
     2019-06-21 -0.0074 -0.0006 -0.00201
     2019-06-24  0.0005 -0.0251 -0.00331
@@ -243,7 +243,7 @@ Common.PlotCumReturns(longShort, "Long-Short", "Fama-French")
 
 
 ```R
-plotAnnualReturns(longShortYearlies, "Short-only Fama-French")
+plotAnnualReturns(longShortYearlies, "Long-Short Fama-French")
 ```
 
 

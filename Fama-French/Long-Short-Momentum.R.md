@@ -126,14 +126,8 @@ retXts <- retXts/100
 
 names(retXts) <- c('HI', 'LO', 'MKT')
 
-pxXts <- merge(cumprod(1+retXts$HI), cumprod(1+retXts$LO), cumprod(1+retXts$MKT))
-names(pxXts) <- c('HI', 'LO', 'MKT')
-
 print(head(retXts))
 print(tail(retXts))
-
-print(head(pxXts))
-print(tail(pxXts))
 ```
 
                     HI      LO      MKT
@@ -150,26 +144,15 @@ print(tail(pxXts))
     2019-06-26 -0.0051  0.0169 -0.00051
     2019-06-27  0.0047  0.0107  0.00609
     2019-06-28  0.0035  0.0124  0.00689
-                      HI        LO       MKT
-    2000-01-03 1.0111000 1.0043000 0.9931100
-    2000-01-04 0.9506362 0.9908424 0.9529983
-    2000-01-05 0.9301025 0.9967874 0.9523407
-    2000-01-06 0.9017344 0.9976845 0.9455886
-    2000-01-07 0.9495263 1.0168401 0.9761406
-    2000-01-10 0.9957682 1.0248731 0.9935257
-                     HI        LO      MKT
-    2019-06-21 4.740578 0.4493131 3.105487
-    2019-06-24 4.742948 0.4380353 3.095208
-    2019-06-25 4.668958 0.4377725 3.065154
-    2019-06-26 4.645146 0.4451708 3.063590
-    2019-06-27 4.666978 0.4499342 3.082248
-    2019-06-28 4.683313 0.4555134 3.103484
 
 
 
 ```R
 longOnly <- merge(retXts$HI, retXts$LO, retXts$MKT)
 names(longOnly) <- c('L', '~S', 'MKT')
+
+pxXts <- merge(cumprod(1+longOnly[,1]), cumprod(1+longOnly[,2]), cumprod(1+longOnly[,3]))
+names(pxXts) <- c('L', '~S', 'MKT')
 longOnlyYearlies <- 100*merge(yearlyReturn(pxXts[,1]), yearlyReturn(pxXts[,2]), yearlyReturn(pxXts[,3]))
 names(longOnlyYearlies) <- c('L', '~S', 'MKT')
 

@@ -13,6 +13,7 @@ library(ggthemes)
 library(odbc)
 library(plutoR)
 library(quantmod)
+library(lubridate)
 library(PerformanceAnalytics)
 
 options("scipen"=999)
@@ -58,6 +59,13 @@ famaFrench <- FamaFrench()
       method            from
       as.zoo.data.frame zoo 
     Version 0.4-0 included new data defaults. See ?getSymbols.
+    
+    Attaching package: ‘lubridate’
+    
+    The following object is masked from ‘package:base’:
+    
+        date
+    
     
     Attaching package: ‘PerformanceAnalytics’
     
@@ -194,7 +202,7 @@ ggplot(toPlot, aes(x=T, y=value, fill=variable)) +
 ```
 
 
-    Error in year(index(longOnlyYearlies)): could not find function "year"
+    Error in melt(yDf, id = "T"): could not find function "melt"
     Traceback:
 
 

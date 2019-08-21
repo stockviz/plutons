@@ -21,7 +21,6 @@ library(tbl2xts)
 
 options("scipen"=999)
 options(stringsAsFactors = FALSE)
-options(repr.plot.width=16, repr.plot.height=8)
 
 source("config.R")
 source("goofy/plot.common.R")
@@ -173,22 +172,12 @@ plotAnnualReturns <- function(yearlies, mainTitle){
 
 
 ```R
-Common.PlotCumReturns(valueWtdDailyRet, "Prior-Return Deciles (Value-weight)", "Fama-French")
-plotAnnualReturns(valueWtdYearlyRet, "Fama-French Prior-Return Deciles (Value Weighted)")
+options(repr.plot.width=16, repr.plot.height=10)
 ```
 
 
-![png](Momentum-Decile-Performance.R_files/Momentum-Decile-Performance.R_5_0.png)
-
-
-
-![png](Momentum-Decile-Performance.R_files/Momentum-Decile-Performance.R_5_1.png)
-
-
-
 ```R
-Common.PlotCumReturns(equalWtdDailyRet, "Prior-Return Deciles (Equal-weight)", "Fama-French")
-plotAnnualReturns(equalWtdYearlyRet, "Fama-French Prior-Return Deciles (Equal Weighted)")
+Common.PlotCumReturns(valueWtdDailyRet, "Prior-Return Deciles (Value-weight)", "Fama-French")
 ```
 
 
@@ -196,7 +185,35 @@ plotAnnualReturns(equalWtdYearlyRet, "Fama-French Prior-Return Deciles (Equal We
 
 
 
-![png](Momentum-Decile-Performance.R_files/Momentum-Decile-Performance.R_6_1.png)
+```R
+Common.PlotCumReturns(equalWtdDailyRet, "Prior-Return Deciles (Equal-weight)", "Fama-French")
+```
+
+
+![png](Momentum-Decile-Performance.R_files/Momentum-Decile-Performance.R_7_0.png)
+
+
+
+```R
+options(repr.plot.width=10, repr.plot.height=20)
+```
+
+
+```R
+plotAnnualReturns(valueWtdYearlyRet, "Fama-French Prior-Return Deciles (Value Weighted)")
+```
+
+
+![png](Momentum-Decile-Performance.R_files/Momentum-Decile-Performance.R_9_0.png)
+
+
+
+```R
+plotAnnualReturns(equalWtdYearlyRet, "Fama-French Prior-Return Deciles (Equal Weighted)")
+```
+
+
+![png](Momentum-Decile-Performance.R_files/Momentum-Decile-Performance.R_10_0.png)
 
 
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)

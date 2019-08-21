@@ -198,7 +198,7 @@ plotAnnualReturns <- function(yearlies, mainTitle){
 
 
 ```R
-Common.PlotCumReturns(longOnly, "Long-only (Equal-weight)", "Fama-French")
+Common.PlotCumReturns(longOnly, "Long-only (Value-weight)", "Fama-French")
 ```
 
 
@@ -207,7 +207,7 @@ Common.PlotCumReturns(longOnly, "Long-only (Equal-weight)", "Fama-French")
 
 
 ```R
-plotAnnualReturns(longOnlyYearlies, "Long-only Fama-French (Equal-weight)")
+plotAnnualReturns(longOnlyYearlies, "Long-only Fama-French (Value-weight)")
 ```
 
 
@@ -216,7 +216,7 @@ plotAnnualReturns(longOnlyYearlies, "Long-only Fama-French (Equal-weight)")
 
 
 ```R
-Common.PlotCumReturns(shortOnly, "Short-only (Equal-weight)", "Fama-French")
+Common.PlotCumReturns(shortOnly, "Short-only (Value-weight)", "Fama-French")
 ```
 
 
@@ -225,7 +225,7 @@ Common.PlotCumReturns(shortOnly, "Short-only (Equal-weight)", "Fama-French")
 
 
 ```R
-plotAnnualReturns(shortOnlyYearlies, "Short-only Fama-French (Equal-weight)")
+plotAnnualReturns(shortOnlyYearlies, "Short-only Fama-French (Value-weight)")
 ```
 
 
@@ -234,7 +234,7 @@ plotAnnualReturns(shortOnlyYearlies, "Short-only Fama-French (Equal-weight)")
 
 
 ```R
-Common.PlotCumReturns(longShort, "Long-Short (Equal-weight)", "Fama-French")
+Common.PlotCumReturns(longShort, "Long-Short (Value-weight)", "Fama-French")
 ```
 
 
@@ -243,7 +243,7 @@ Common.PlotCumReturns(longShort, "Long-Short (Equal-weight)", "Fama-French")
 
 
 ```R
-plotAnnualReturns(longShortYearlies, "Long-Short Fama-French (Equal-weight)")
+plotAnnualReturns(longShortYearlies, "Long-Short Fama-French (Value-weight)")
 ```
 
 
@@ -252,7 +252,7 @@ plotAnnualReturns(longShortYearlies, "Long-Short Fama-French (Equal-weight)")
 
 
 ```R
-Common.PlotCumReturns(lsl, "Long, Short and Long-Short (Equal-weight)", "Fama-French")
+Common.PlotCumReturns(lsl, "Long, Short and Long-Short (Value-weight)", "Fama-French")
 ```
 
 

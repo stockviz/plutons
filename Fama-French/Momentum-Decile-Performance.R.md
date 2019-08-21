@@ -172,7 +172,7 @@ plotAnnualReturns <- function(yearlies, mainTitle){
 
 
 ```R
-options(repr.plot.width=16, repr.plot.height=10)
+options(repr.plot.width=18, repr.plot.height=10)
 ```
 
 
@@ -195,7 +195,7 @@ Common.PlotCumReturns(equalWtdDailyRet, "Prior-Return Deciles (Equal-weight)", "
 
 
 ```R
-options(repr.plot.width=10, repr.plot.height=20)
+options(repr.plot.width=10, repr.plot.height=30)
 ```
 
 

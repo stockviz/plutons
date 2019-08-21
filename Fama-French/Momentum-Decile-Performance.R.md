@@ -195,7 +195,7 @@ Common.PlotCumReturns(equalWtdDailyRet, "Prior-Return Deciles (Equal-weight)", "
 
 
 ```R
-options(repr.plot.width=10, repr.plot.height=30)
+options(repr.plot.width=10, repr.plot.height=25)
 ```
 
 

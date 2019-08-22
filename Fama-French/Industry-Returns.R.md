@@ -147,45 +147,13 @@ cumEqualWtd <- applyFnDf(equalWtd, Return.cumulative)
 sdValWtd <- applyFnDf(rrValueWtd, sd)
 sdEqlWtd <- applyFnDf(rrEqualWtd, sd)
 
-statsValDf <- inner_join(sdValWtd) %>%
-    inner_join(cumValueWtd)
+statsValDf <- sdValWtd %>% inner_join(cumValueWtd)
 
-statsEqlDf <- inner_join(sdEqlWtd) %>%
-    inner_join(cumEqualWtd)
+statsEqlDf <- sdEqlWtd %>% inner_join(cumEqualWtd)
 ```
 
-
-    Error in inner_join(tbl_df(x), y, by = by, copy = copy, ...): argument "y" is missing, with no default
-    Traceback:
-
-
-    1. inner_join(sdValWtd) %>% inner_join(cumValueWtd)
-
-    2. eval(lhs, parent, parent)
-
-    3. eval(lhs, parent, parent)
-
-    4. inner_join(sdValWtd)
-
-    5. inner_join.data.frame(sdValWtd)
-
-    6. as.data.frame(inner_join(tbl_df(x), y, by = by, copy = copy, 
-     .     ...))
-
-    7. inner_join(tbl_df(x), y, by = by, copy = copy, ...)
-
-    8. inner_join.tbl_df(tbl_df(x), y, by = by, copy = copy, ...)
-
-    9. check_valid_names(tbl_vars(y))
-
-    10. tbl_vars(y)
-
-    11. new_sel_vars(tbl_vars_dispatch(x), group_vars(x))
-
-    12. structure(vars, groups = group_vars, class = c("dplyr_sel_vars", 
-      .     "character"))
-
-    13. tbl_vars_dispatch(x)
+    Joining, by = "I"
+    Joining, by = "I"
 
 
 
@@ -218,19 +186,6 @@ eqlRet <- statsEqlDf %>%
 ```
 
 
-    Error in eval(lhs, parent, parent): object 'statsValDf' not found
-    Traceback:
-
-
-    1. statsValDf %>% top_n(5, wt = -sd) %>% arrange(desc(Return.cumulative)) %>% 
-     .     select(I) %>% as.vector()
-
-    2. eval(lhs, parent, parent)
-
-    3. eval(lhs, parent, parent)
-
-
-
 ```R
 #Value weighted high sd, sorted by returns
 valHighSd <- statsValDf %>% 
@@ -260,19 +215,6 @@ eqlLowRet <- statsEqlDf %>%
 ```
 
 
-    Error in eval(lhs, parent, parent): object 'statsValDf' not found
-    Traceback:
-
-
-    1. statsValDf %>% top_n(5, wt = sd) %>% arrange(desc(Return.cumulative)) %>% 
-     .     select(I) %>% as.vector()
-
-    2. eval(lhs, parent, parent)
-
-    3. eval(lhs, parent, parent)
-
-
-
 ```R
 options(repr.plot.width=18, repr.plot.height=10)
 ```
@@ -282,7 +224,8 @@ options(repr.plot.width=18, repr.plot.height=10)
 Common.PlotCumReturns(valueWtd[, valLowSd$I], "Low Std-Dev (Value-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(valueWtd, , valLowSd$I): object 'valLowSd' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_9_0.png)
 
 
 
@@ -298,7 +241,8 @@ Common.PlotCumReturns(valueWtd[, valHighRet$I], "High Returns (Value-weight)", "
 Common.PlotCumReturns(equalWtd[, eqlLowSd$I], "Low Std-Dev (Equal-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(equalWtd, , eqlLowSd$I): object 'eqlLowSd' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_11_0.png)
 
 
 
@@ -314,7 +258,8 @@ Common.PlotCumReturns(equalWtd[, eqlHighRet$I], "High Returns (Equal-weight)", "
 Common.PlotCumReturns(valueWtd[, valHighSd$I], "High Std-Dev (Value-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(valueWtd, , valHighSd$I): object 'valHighSd' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_13_0.png)
 
 
 
@@ -322,7 +267,8 @@ Common.PlotCumReturns(valueWtd[, valHighSd$I], "High Std-Dev (Value-weight)", "F
 Common.PlotCumReturns(valueWtd[, valLowRet$I], "Low Returns (Value-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(valueWtd, , valLowRet$I): object 'valLowRet' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_14_0.png)
 
 
 
@@ -330,7 +276,8 @@ Common.PlotCumReturns(valueWtd[, valLowRet$I], "Low Returns (Value-weight)", "Fa
 Common.PlotCumReturns(equalWtd[, eqlHighSd$I], "High Std-Dev (Equal-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(equalWtd, , eqlHighSd$I): object 'eqlHighSd' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_15_0.png)
 
 
 
@@ -338,7 +285,8 @@ Common.PlotCumReturns(equalWtd[, eqlHighSd$I], "High Std-Dev (Equal-weight)", "F
 Common.PlotCumReturns(equalWtd[, eqlLowRet$I], "Low Returns (Equal-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(equalWtd, , eqlLowRet$I): object 'eqlLowRet' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_16_0.png)
 
 
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)

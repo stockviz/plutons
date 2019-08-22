@@ -147,28 +147,45 @@ cumEqualWtd <- applyFnDf(equalWtd, Return.cumulative)
 sdValWtd <- applyFnDf(rrValueWtd, sd)
 sdEqlWtd <- applyFnDf(rrEqualWtd, sd)
 
-statsValDf <- minValWtd %>%
-    inner_join(maxValWtd) %>%
-    inner_join(sdValWtd) %>%
+statsValDf <- inner_join(sdValWtd) %>%
     inner_join(cumValueWtd)
 
-statsEqlDf <- minEqlWtd %>%
-    inner_join(maxEqlWtd) %>%
-    inner_join(sdEqlWtd) %>%
+statsEqlDf <- inner_join(sdEqlWtd) %>%
     inner_join(cumEqualWtd)
 ```
 
 
-    Error in eval(lhs, parent, parent): object 'minValWtd' not found
+    Error in inner_join(tbl_df(x), y, by = by, copy = copy, ...): argument "y" is missing, with no default
     Traceback:
 
 
-    1. minValWtd %>% inner_join(maxValWtd) %>% inner_join(sdValWtd) %>% 
-     .     inner_join(cumValueWtd)
+    1. inner_join(sdValWtd) %>% inner_join(cumValueWtd)
 
     2. eval(lhs, parent, parent)
 
     3. eval(lhs, parent, parent)
+
+    4. inner_join(sdValWtd)
+
+    5. inner_join.data.frame(sdValWtd)
+
+    6. as.data.frame(inner_join(tbl_df(x), y, by = by, copy = copy, 
+     .     ...))
+
+    7. inner_join(tbl_df(x), y, by = by, copy = copy, ...)
+
+    8. inner_join.tbl_df(tbl_df(x), y, by = by, copy = copy, ...)
+
+    9. check_valid_names(tbl_vars(y))
+
+    10. tbl_vars(y)
+
+    11. new_sel_vars(tbl_vars_dispatch(x), group_vars(x))
+
+    12. structure(vars, groups = group_vars, class = c("dplyr_sel_vars", 
+      .     "character"))
+
+    13. tbl_vars_dispatch(x)
 
 
 
@@ -310,10 +327,10 @@ Common.PlotCumReturns(valueWtd[, valLowRet$I], "Low Returns (Value-weight)", "Fa
 
 
 ```R
-Common.PlotCumReturns(equalWtd[, eqlLowSd$I], "High Std-Dev (Equal-weight)", "Fama-French")
+Common.PlotCumReturns(equalWtd[, eqlHighSd$I], "High Std-Dev (Equal-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(equalWtd, , eqlLowSd$I): object 'eqlLowSd' not found>
+    <simpleError in `[.xts`(equalWtd, , eqlHighSd$I): object 'eqlHighSd' not found>
 
 
 

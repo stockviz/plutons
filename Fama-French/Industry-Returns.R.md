@@ -173,13 +173,13 @@ eqlLowSd <- statsEqlDf %>%
     as.vector()
 
 #Value weighted high returns"
-valRet <- statsValDf %>% 
+valHighRet <- statsValDf %>% 
     top_n(5, wt=`Return.cumulative`) %>%
     select(I) %>%
     as.vector()
 
 #Equal weighted high returns"
-eqlRet <- statsEqlDf %>% 
+eqlHighRet <- statsEqlDf %>% 
     top_n(5, wt=`Return.cumulative`) %>%
     select(I) %>%
     as.vector()
@@ -233,7 +233,8 @@ Common.PlotCumReturns(valueWtd[, valLowSd$I], "Low Std-Dev (Value-weight)", "Fam
 Common.PlotCumReturns(valueWtd[, valHighRet$I], "High Returns (Value-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(valueWtd, , valHighRet$I): object 'valHighRet' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_10_0.png)
 
 
 
@@ -250,7 +251,8 @@ Common.PlotCumReturns(equalWtd[, eqlLowSd$I], "Low Std-Dev (Equal-weight)", "Fam
 Common.PlotCumReturns(equalWtd[, eqlHighRet$I], "High Returns (Equal-weight)", "Fama-French")
 ```
 
-    <simpleError in `[.xts`(equalWtd, , eqlHighRet$I): object 'eqlHighRet' not found>
+
+![png](Industry-Returns.R_files/Industry-Returns.R_12_0.png)
 
 
 

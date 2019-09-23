@@ -6,6 +6,13 @@ notebooks created on pluto
 [Currency futures on the NSE](plotting-currency-futures.R.ipynb): Creating a continuous series out of futures contracts.\
 [An overview of how currency sources on pluto](currency-sources.R.ipynb)
 
+### Yield curves!
+[Zero-coupon yields vs. Sovereign bond index yields](zero-coupon.vs.bond-yeilds.R.ipynb)\
+[Plotting the 10-year yields of India, US and Euro-AAAs](10-year-yields.R.ipynb)
+
+### [US Corporate AAA/BBB Total Returns](US-corporate-AAA-vs-BBB.ipynb)
+Cumulative and yearly return charts using FRED data.
+
 ### Gold
 [Gold vs. NIFTY 50](gold-nifty50.ipynb): Explore historical returns of gold vs. the NIFTY 50 Total Return (TR) index in dollars.\
 [GOLDBEES vs. NIFTYBEES](GOLDBEES-NIFTYBEES.R.ipynb): Comparision of the two India listed ETFs.\
@@ -48,11 +55,7 @@ Uses a monthly return series of NIFTY 50 and MIDCAP 100 total-return indices as 
 Works mostly because it side-steps some steep drawdowns. However, when the same was tested on [NIFTY/INDIA-VIX](vix-adjusted-momentum-INDIA.R.md), it under-performed buy-and-hold. And [adding an SMA(50) layer](vix-adjusted-momentum-and-SMA-INDIA.R.ipynb) only makes it worse.
 
 ### [Getting to "real" returns](inflation-adjusted-returns.R.ipynb)
-Inflation tends to vary widely through time. To see what "real", i.e., after inflation, returns are, the rate of inflation needs to be subtracted from gross returns. Also, [charting historical inflation](cpi-inflaiton-world-bank.ipynb)
-
-### Yield curves!
-[Zero-coupon yields vs. Sovereign bond index yields](zero-coupon.vs.bond-yeilds.R.ipynb)\
-[Plotting the 10-year yields of India, US and Euro-AAAs](10-year-yields.R.ipynb)
+Inflation tends to vary widely through time. To see what "real", i.e., after inflation, returns are, the rate of inflation needs to be subtracted from gross returns. Also, [charting historical inflation](cpi-inflation-world-bank.ipynb)
 
 ### Equity time-series
 [Plotting a stock's price chart with corporate action overlay](charting-stocks-with-corporate-actions.R.ipynb)\
@@ -63,8 +66,6 @@ Inflation tends to vary widely through time. To see what "real", i.e., after inf
 ### [NSE's "Alpha" Indices charted](NIFTY-ALPHA-indices.R.ipynb)
 
 ## Fama-French
-
-### Momentum Factor
 [Equity Risk Premium](Fama-French/Equity-Risk-Premium.R.ipynb): An equity investor takes on a lot more risk compared to someone who buys only US government bonds. So, in theory, the equity investor should earn returns in excess of those given by bonds. But how much more should that be?\
 [Value vs. Equal weighting](Fama-French/Industry-Returns.R.md):The decision between value weighting and equal weighting a portfolio cannot be taken in haste. It ends up making a big difference over time.\
 [Low-momentum ≠ Negative-returns](Fama-French/Momentum-Decile-Performance.R.md): Sometimes, everything rallies. Just because a set of stocks performed poorly in the past doesn’t necessarily mean that they will have *negative* returns going-forward. \

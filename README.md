@@ -48,7 +48,7 @@ Uses a monthly return series of NIFTY 50 and MIDCAP 100 total-return indices as 
 Works mostly because it side-steps some steep drawdowns. However, when the same was tested on [NIFTY/INDIA-VIX](vix-adjusted-momentum-INDIA.R.md), it under-performed buy-and-hold. And [adding an SMA(50) layer](vix-adjusted-momentum-and-SMA-INDIA.R.ipynb) only makes it worse.
 
 ### [Getting to "real" returns](inflation-adjusted-returns.R.ipynb)
-Inflation tends to vary widely through time. To see what "real", i.e., after inflation, returns are, the rate of inflation needs to be subtracted from gross returns.
+Inflation tends to vary widely through time. To see what "real", i.e., after inflation, returns are, the rate of inflation needs to be subtracted from gross returns. Also, [charting historical inflation](cpi-inflaiton-world-bank.ipynb)
 
 ### Yield curves!
 [Zero-coupon yields vs. Sovereign bond index yields](zero-coupon.vs.bond-yeilds.R.ipynb)\
@@ -65,5 +65,10 @@ Inflation tends to vary widely through time. To see what "real", i.e., after inf
 ## Fama-French
 
 ### Momentum Factor
-[Introduction](Fama-French/Momentum.R.ipynb): Charting the performance of the long-short academic momentum factor.
+[Equity Risk Premium](Fama-French/Equity-Risk-Premium.R.ipynb): An equity investor takes on a lot more risk compared to someone who buys only US government bonds. So, in theory, the equity investor should earn returns in excess of those given by bonds. But how much more should that be?\
+[Value vs. Equal weighting](Fama-French/Industry-Returns.R.md):The decision between value weighting and equal weighting a portfolio cannot be taken in haste. It ends up making a big difference over time.\
+[Low-momentum ≠ Negative-returns](Fama-French/Momentum-Decile-Performance.R.md): Sometimes, everything rallies. Just because a set of stocks performed poorly in the past doesn’t necessarily mean that they will have *negative* returns going-forward. \
+[Long-Short comes up short](Fama-French/Long-Short-Momentum.R.md): The last 10-years in the US markets have been a one-way, long-only bet. So if you constructed a long-short momentum portfolio, the chances are that you got hosed.\
+[Out-lasting statistics](Fama-French/Momentum.R.ipynb): Just because momentum is statistically shown to out-perform the market over long periods of time, the actual period during which it out-performs may not overlap with your time horizon.
+
 
